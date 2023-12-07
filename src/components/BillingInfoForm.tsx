@@ -17,7 +17,7 @@ type TFormValues = {
   city: string;
   state: string;
   zipCode: string;
-  country: string;
+  billingCountry: string;
 };
 
 export function BillingInfoForm() {
@@ -105,10 +105,10 @@ export function BillingInfoForm() {
         />
       </div>
       <div className={inputDivStyle}>
-        <label htmlFor="country">Country</label>
+        <label htmlFor="billingCountry">Country</label>
         <input
-          id="country"
-          {...register("country")}
+          id="billingCountry"
+          {...register("billingCountry")}
           className={inputStyle}
           required={true}
         />
