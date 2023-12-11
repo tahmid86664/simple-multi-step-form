@@ -1,7 +1,6 @@
 "use client";
 
 import { useFormState } from "~/components/FormContext";
-import { PasswordForm } from "~/components/PasswordForm";
 import { BusinessInfoForm } from "~/components/BusinessInfoForm";
 import { BankInfoForm } from "~/components/BankInfoForm";
 import { BillingInfoForm } from "~/components/BillingInfoForm";
