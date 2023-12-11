@@ -6,6 +6,8 @@ import { BusinessInfoForm } from "~/components/BusinessInfoForm";
 import { BankInfoForm } from "~/components/BankInfoForm";
 import { BillingInfoForm } from "~/components/BillingInfoForm";
 import { ContactPersonInfoForm } from "~/components/ContactPersonInfoForm";
+import { BrandInfoForm } from "~/components/BrandInfoForm";
+import { BusinessDocumentForm } from "~/components/BusinessDocumentForm";
 
 function ActiveStepFormComponent() {
   const { step } = useFormState();
@@ -19,7 +21,9 @@ function ActiveStepFormComponent() {
     case 4:
       return <ContactPersonInfoForm />;
     case 5:
-      return <PasswordForm />;
+      return <BrandInfoForm />;
+    case 6:
+      return <BusinessDocumentForm />;
     default:
       return null;
   }

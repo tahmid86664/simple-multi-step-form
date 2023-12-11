@@ -1,12 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useFormState } from "./FormContext";
-import {
-  backButtonStyle,
-  formHeadingStyle,
-  inputDivStyle,
-  inputStyle,
-  nextButtonStyle,
-} from "~/constants/style";
+import TextInput from "./TextInput";
+import Button from "./Button";
 
 type TFormValues = {
   recipientName: string;
@@ -36,93 +31,98 @@ export function BillingInfoForm() {
       className="flex gap-1 flex-col"
       onSubmit={handleSubmit(onHandleFormSubmit)}
     >
-      <h3 className={formHeadingStyle}>Step 3: Billing Information</h3>
-      <div className={inputDivStyle}>
-        <label htmlFor="recipientName">Recipient Name</label>
-        <input
-          autoFocus
-          id="recipientName"
-          {...register("recipientName")}
-          className={inputStyle}
-          required={true}
-        />
-      </div>
-      <div className={inputDivStyle}>
-        <label htmlFor="addressLine1">Address Line 1</label>
-        <input
-          id="addressLine1"
-          {...register("addressLine1")}
-          className={inputStyle}
-          required={true}
-        />
-      </div>
-      <div className={inputDivStyle}>
-        <label htmlFor="addressLine2">Address Line 2</label>
-        <input
-          id="addressLine2"
-          {...register("addressLine2")}
-          className={inputStyle}
-        />
-      </div>
-      <div className={inputDivStyle}>
-        <label htmlFor="poBox">PO Box</label>
-        <input id="poBox" {...register("poBox")} className={inputStyle} />
-      </div>
-      <div className={inputDivStyle}>
-        <label htmlFor="district">District</label>
-        <input
-          id="district"
-          {...register("district")}
-          className={inputStyle}
-          required={true}
-        />
-      </div>
-      <div className={inputDivStyle}>
-        <label htmlFor="city">City</label>
-        <input
-          id="city"
-          {...register("city")}
-          className={inputStyle}
-          required={true}
-        />
-      </div>
-      <div className={inputDivStyle}>
-        <label htmlFor="state">State</label>
-        <input
-          id="state"
-          {...register("state")}
-          className={inputStyle}
-          required={true}
-        />
-      </div>
-      <div className={inputDivStyle}>
-        <label htmlFor="zipCode">Zip Code</label>
-        <input
-          id="zipCode"
-          {...register("zipCode")}
-          className={inputStyle}
-          required={true}
-        />
-      </div>
-      <div className={inputDivStyle}>
-        <label htmlFor="billingCountry">Country</label>
-        <input
-          id="billingCountry"
-          {...register("billingCountry")}
-          className={inputStyle}
-          required={true}
-        />
-      </div>
+      <h3 className={"text-xl font-semibold mb-4"}>
+        Step 3: Billing Information
+      </h3>
+      <TextInput
+        propertyName={"recipientName"}
+        label={"Recipient Name"}
+        isRequired={true}
+        isAutofocus={true}
+        placeholder={"Enter recipient name"}
+        register={register}
+        key={"recipientName"}
+      />
+      <TextInput
+        propertyName={"addressLine1"}
+        label={"Address Line 1"}
+        isRequired={true}
+        placeholder={"Enter billing address"}
+        register={register}
+        key={"addressLine1"}
+      />
+      <TextInput
+        propertyName={"addressLine2"}
+        label={"Address Line 2"}
+        isRequired={true}
+        placeholder={"address line 2"}
+        register={register}
+        key={"addressLine2"}
+      />
+      <TextInput
+        propertyName={"poBox"}
+        label={"PO Box"}
+        isRequired={true}
+        placeholder={"Enter PO box"}
+        register={register}
+        key={"poBox"}
+      />
+      <TextInput
+        propertyName={"district"}
+        label={"District"}
+        isRequired={true}
+        placeholder={"District"}
+        register={register}
+        key={"district"}
+      />
+      <TextInput
+        propertyName={"city"}
+        label={"City"}
+        isRequired={true}
+        placeholder={"city"}
+        register={register}
+        key={"city"}
+      />
+      <TextInput
+        propertyName={"state"}
+        label={"State"}
+        isRequired={true}
+        placeholder={"State"}
+        register={register}
+        key={"state"}
+      />
+      <TextInput
+        propertyName={"zipCode"}
+        label={"Zip Code"}
+        isRequired={true}
+        placeholder={"Zip Code"}
+        register={register}
+        key={"zipCode"}
+      />
+      <TextInput
+        propertyName={"zipCode"}
+        label={"Zip Code"}
+        isRequired={true}
+        placeholder={"Zip Code"}
+        register={register}
+        key={"zipCode"}
+      />
+      <TextInput
+        propertyName={"billingCountry"}
+        label={"Country"}
+        isRequired={true}
+        placeholder={"Country"}
+        register={register}
+        key={"billingCountry"}
+      />
 
       <div className="flex gap-4 justify-end mt-4">
-        <button
-          type="button"
-          onClick={onHandleBack}
-          className={backButtonStyle}
-        >
-          Back
-        </button>
-        <button className={nextButtonStyle}>Next</button>
+        <Button
+          buttonType="back"
+          buttonText="Back"
+          onClickHandler={onHandleBack}
+        />
+        <Button buttonType="next" buttonText="Next" />
       </div>
     </form>
   );
